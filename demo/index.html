@@ -1,0 +1,133 @@
+<!doctype html>
+<!--
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+  <title>paper-card</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <link href="../../font-roboto/roboto.html" rel="import">
+  <link href="../../layout/layout.html" rel="import">
+  <link href="../../quick-element/quick-element.html" rel="import">
+  <link href="../paper-card.html" rel="import">
+
+  <style>
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      font-size: 14px;
+      margin: 0;
+      padding: 24px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+  </style>
+
+</head>
+<body>
+  <template is="quick-element" name="paper-card-demo">
+    <style> 
+      section {
+        padding: 20px 0;
+      }
+
+      section > div {
+        padding: 14px;
+        font-size: 16px;
+      }
+
+      paper-card {
+        display: inline-block;
+        background: white;
+        box-sizing: border-box;
+        margin: 16px;
+        padding: 16px;
+        border-radius: 2px;
+      }
+
+      .fab {
+        display: inline-block;
+        background: white;
+        box-sizing: border-box;
+        width: 56px;
+        height: 56px;
+        margin: 16px;
+        padding: 16px;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+    <section>
+      <div>Card Elevations</div>
+
+      <paper-card elevation="0">
+        elevation = 0
+      </paper-card>
+
+      <paper-card elevation="1">
+        elevation = 1
+      </paper-card>
+
+      <paper-card elevation="2">
+        elevation = 2
+      </paper-card>
+
+      <paper-card elevation="3">
+        elevation = 3
+      </paper-card>
+
+      <paper-card elevation="4">
+        elevation = 4
+      </paper-card>
+
+      <paper-card elevation="5">
+        elevation = 5
+      </paper-card>
+    </section>
+
+    <section on-click="tapAction">
+      <div>Animated</div>
+
+      <paper-card elevation="0" animated>
+        tap
+      </paper-card>
+
+      <paper-card class="fab layout center-center" elevation="0" animated>
+        tap
+      </paper-card>
+    </section>
+  </template>
+
+  <paper-card-demo id="demo"></paper-card-demo>
+
+  <script>
+
+    demo.tapAction = function(e) {
+      var target = e.target;
+      if (!target.down) {
+        target.elevation += 1;
+        if (target.elevation === 5) {
+          target.down = true;
+        }
+      } else {
+        target.elevation -= 1;
+        if (target.elevation === 0) {
+          target.down = false;
+        }
+      }
+    };
+
+  </script>
+
+</body>
+</html>

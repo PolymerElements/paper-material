@@ -1,0 +1,18 @@
+{
+  "name": "paper-card",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Polymer/paper-card",
+  "authors": [
+    "The Polymer Authors"
+  ],
+  "devDependencies": {
+    "web-component-tester": "~2.2.6",
+    "test-fixture": "polymer/test-fixture#~0.1.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#~0.5.5",
+    "quick-element": "polymer/quick-element"
+  },
+  "dependencies": {
+    "polymer": "polymer/polymer#0.8-preview",
+    "paper-shadow": "polymer/paper-shadow#0.8-preview"
+  }
+}
