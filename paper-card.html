@@ -9,17 +9,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!--
 
-`paper-shadow` is a container that renders two shadows on top of each other to
+`paper-card` is a container that renders two shadows on top of each other to
 create the effect of a lifted piece of paper.
 
 Example:
 
-    <paper-shadow z="1">
+    <paper-card elevation="1">
       ... card content ...
-    </paper-shadow>
+    </paper-card>
 
 @group Paper Elements
-@class paper-shadow
+@class paper-card
 -->
 
 <link href="../polymer/polymer.html" rel="import">
@@ -42,11 +42,11 @@ Example:
     properties: {
 
       /**
-       * The z-depth of this shadow, from 0-5. Setting to 0 will remove the
+       * The z-depth of this card, from 0-5. Setting to 0 will remove the
        * shadow, and each increasing number greater than 0 will be "deeper"
        * than the last.
        *
-       * @attribute z
+       * @attribute elevation
        * @type number
        * @default 1
        */
@@ -58,7 +58,7 @@ Example:
 
       /**
        * Set this to true to animate the shadow when setting a new
-       * `z` value.
+       * `elevation` value.
        *
        * @attribute animated
        * @type boolean
