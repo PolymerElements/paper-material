@@ -23,13 +23,33 @@ Example:
 -->
 
 <link href="../polymer/polymer.html" rel="import">
-<link href="../layout/layout.html" rel="import">
+<link href="../paper-styles/shadow.html" rel="import">
 <dom-module id="paper-card">
-  <link rel="import" type="css" href="../paper-shadow/paper-shadow.css">
   <style>
     :host {
       display: block;
       position: relative;
+      mixin(--shadow-transition);
+    }
+
+    :host([elevation="1"]) {
+      mixin(--shadow-elevation-1);
+    }
+
+    :host([elevation="2"]) {
+      mixin(--shadow-elevation-2);
+    }
+
+    :host([elevation="3"]) {
+      mixin(--shadow-elevation-3);
+    }
+
+    :host([elevation="4"]) {
+      mixin(--shadow-elevation-4);
+    }
+
+    :host([elevation="5"]) {
+      mixin(--shadow-elevation-5);
     }
   </style>
   <template>
@@ -39,6 +59,8 @@ Example:
 <script>
   Polymer({
     is: 'paper-card',
+
+    enableCustomStyleProperties: true,
 
     properties: {
 
@@ -71,5 +93,5 @@ Example:
         value: false
       }
     }
-  })
+  });
 </script>

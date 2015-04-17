@@ -15,11 +15,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
-  <script src="../../webcomponentsjs/webcomponents.js"></script>
-  <link href="../../font-roboto/roboto.html" rel="import">
-  <link href="../../layout/layout.html" rel="import">
-  <link href="../../quick-element/quick-element.html" rel="import">
-  <link href="../paper-card.html" rel="import">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../paper-styles/layout.html">
+  <link rel="import" href="../../paper-styles/typography.html">
+  <link rel="import" href="../paper-card.html">
 
   <style>
     body {
@@ -34,8 +33,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </head>
 <body>
-  <template is="quick-element" name="paper-card-demo">
-    <style> 
+  <template is="x-autobind" id="demo">
+    <style>
       section {
         padding: 20px 0;
       }
@@ -107,8 +106,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-card>
     </section>
   </template>
-
-  <paper-card-demo id="demo"></paper-card-demo>
 
   <script>
 
