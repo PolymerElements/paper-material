@@ -6,7 +6,7 @@
     "The Polymer Authors"
   ],
   "dependencies": {
-    "polymer": "polymer/polymer#v0.8.0-rc.6",
+    "polymer": "polymer/polymer#v0.8.0-rc.7",
     "paper-styles": "polymerelements/paper-styles#^0.8.0"
   },
   "devDependencies": {
