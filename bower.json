@@ -5,13 +5,17 @@
   "authors": [
     "The Polymer Authors"
   ],
+  "main": [
+    "paper-card.html"
+  ],
   "dependencies": {
     "polymer": "polymer/polymer#v0.8.0-rc.7",
     "paper-styles": "polymerelements/paper-styles#^0.8.0"
   },
   "devDependencies": {
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#^0.8.0",
     "test-fixture": "polymerelements/test-fixture#^0.8.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.6.0",
-    "web-component-tester": "~2.2.6"
+    "web-component-tester": "*"
   }
 }
