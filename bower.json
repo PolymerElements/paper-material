@@ -1,12 +1,25 @@
 {
-  "name": "paper-card",
+  "name": "paper-material",
   "version": "0.8.0",
   "private": true,
   "authors": [
     "The Polymer Authors"
   ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
   "main": [
-    "paper-card.html"
+    "paper-material.html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-material"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/PolymerElements/paper-material",
+  "ignore": [
   ],
   "dependencies": {
     "polymer": "polymer/polymer#v0.8.0-rc.7",
