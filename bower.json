@@ -13,9 +13,7 @@
     "paper",
     "container"
   ],
-  "main": [
-    "paper-material.html"
-  ],
+  "main": "paper-material.html",
   "repository": {
     "type": "git",
     "url": "git://github.com/PolymerElements/paper-material"
