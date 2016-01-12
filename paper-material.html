@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-styles/shadow.html">
+<link rel="import" href="../paper-styles/typography.html">
 <link rel="import" href="paper-material-shared-styles.html">
 
 <!--
@@ -24,6 +25,14 @@ Example:
       ... content ...
     </paper-material>
 
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-font-common-base` | Font mixin | Defined in `paper-styles/typography.html`
+
 @group Paper Elements
 @demo demo/index.html
 -->
@@ -32,6 +41,9 @@ Example:
   <template>
     <style include="paper-material-shared-styles"></style>
     <style>
+      :host {
+        @apply(--paper-font-common-base);
+      }
       :host([animated]) {
         @apply(--shadow-transition);
       }
