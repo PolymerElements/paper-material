@@ -28,7 +28,7 @@
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
-    "web-component-tester": "^4.0.0",
+    "web-component-tester": "v6.0.0-prerelease.5",
     "test-fixture": "PolymerElements/test-fixture#^2.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
   },
