@@ -22,7 +22,7 @@
   "homepage": "https://github.com/PolymerElements/paper-material",
   "ignore": [],
   "dependencies": {
-    "polymer": "Polymer/polymer#2.0-preview",
+    "polymer": "Polymer/polymer#^2.0.0-rc.1",
     "paper-styles": "polymerelements/paper-styles#2.0-preview"
   },
   "devDependencies": {
