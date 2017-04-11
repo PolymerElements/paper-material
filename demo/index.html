@@ -48,19 +48,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </demo-snippet>
 
-    <h3>Changes in elevation can be animated</h3>
+    <h3>Changes in elevation can be animated. Tap each of these boxes!</h3>
     <demo-snippet class="centered-demo">
       <template>
         <style>
           #a1, #a2 { cursor: pointer; }
         </style>
-        Tap each of these boxes!
         <div>
           <paper-material elevation="0" animated id="a1">animated</paper-material>
           <paper-material elevation="3" id="a2">not animated</paper-material>
         </div>
         <script>
-          document.addEventListener('WebComponentsReady', function() {
+          window.addEventListener('WebComponentsReady', function() {
             a1.addEventListener('click', _onTap);
             a2.addEventListener('click', _onTap);
           });
