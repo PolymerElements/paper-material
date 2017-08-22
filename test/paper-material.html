@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../web-component-tester/browser.js"></script>
-  <link href="../paper-material.html" rel="import">
+  <script type="module" src="../paper-material.js"></script>
 
 </head>
 <body>
@@ -36,53 +36,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
   </test-fixture>
 
-  <script>
-    suite('<paper-material>', function() {
-      suite('with a non-zero elevation attribute', function() {
-        var style;
-        var card;
+  <script type="module">
+import '../paper-material.js';
+suite('<paper-material>', function() {
+  suite('with a non-zero elevation attribute', function() {
+    var style;
+    var card;
 
-        setup(function() {
-          card = fixture('TrivialCard');
-          style = window.getComputedStyle(card);
-        });
+    setup(function() {
+      card = fixture('TrivialCard');
+      style = window.getComputedStyle(card);
+    });
 
-        test('has a shadow', function() {
-          expect(style.boxShadow).to.be.ok;
-          expect(style.boxShadow).to.not.be.eql('none');
-        });
+    test('has a shadow', function() {
+      expect(style.boxShadow).to.be.ok;
+      expect(style.boxShadow).to.not.be.eql('none');
+    });
 
-        test('loses shadow with elevation value 0', function() {
-          card.elevation = 0;
-          expect(style.boxShadow).to.be.eql('none');
-        });
-      });
+    test('loses shadow with elevation value 0', function() {
+      card.elevation = 0;
+      expect(style.boxShadow).to.be.eql('none');
+    });
+  });
 
-      suite('progressively increasing values of elevation', function() {
-        var cards;
+  suite('progressively increasing values of elevation', function() {
+    var cards;
 
-        setup(function() {
-          cards = fixture('ProgressiveElevations');
-        });
+    setup(function() {
+      cards = fixture('ProgressiveElevations');
+    });
 
-        test('yield progressively "deeper" cards', function() {
-          var lastStyle;
-          var style;
+    test('yield progressively "deeper" cards', function() {
+      var lastStyle;
+      var style;
 
-          expect(cards.length).to.be.eql(5);
+      expect(cards.length).to.be.eql(5);
 
-          cards.forEach(function (card) {
-            style = window.getComputedStyle(card);
+      cards.forEach(function (card) {
+        style = window.getComputedStyle(card);
 
-            expect(style.boxShadow).to.be.ok;
-            expect(style.boxShadow).to.not.be.eql('none');
-            expect(style.boxShadow).to.not.be.eql(lastStyle && lastStyle.boxShadow);
+        expect(style.boxShadow).to.be.ok;
+        expect(style.boxShadow).to.not.be.eql('none');
+        expect(style.boxShadow).to.not.be.eql(lastStyle && lastStyle.boxShadow);
 
-            lastStyle = style;
-          });
-        });
+        lastStyle = style;
       });
     });
-  </script>
+  });
+});
+</script>
 </body>
 </html>
