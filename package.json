@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/paper-material",
+  "private": true,
+  "description": "A material design container that looks like a lifted sheet of paper",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-material"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt"
+}
