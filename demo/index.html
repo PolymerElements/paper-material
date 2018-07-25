@@ -16,43 +16,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
-  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../../iron-demo-helpers/demo-snippet.js"></script>
-  <script type="module" src="../../iron-demo-helpers/demo-pages-shared-styles.js"></script>
-  <script type="module" src="../paper-material.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '../paper-material.js';
 
-  <!-- FIXME(polymer-modulizer):
-        These imperative modules that innerHTML your HTML are
-        a hacky way to be sure that any mixins in included style
-        modules are ready before any elements that reference them are
-        instantiated, otherwise the CSS @apply mixin polyfill won't be
-        able to expand the underlying CSS custom properties.
-        See: https://github.com/Polymer/polymer-modulizer/issues/154
-        -->
-    <script type="module">
-const $_documentContainer = document.createElement('template');
+    import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
-$_documentContainer.innerHTML = `<custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
-      paper-material {
-        display: inline-block;
-        background: white;
-        box-sizing: border-box;
-        margin: 8px;
-        padding: 16px;
-        border-radius: 2px;
-      }
-    </style>
-  </custom-style>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
+    const template = html`
+      <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+          paper-material {
+            display: inline-block;
+            background: white;
+            box-sizing: border-box;
+            margin: 8px;
+            padding: 16px;
+            border-radius: 2px;
+          }
+        </style>
+      </custom-style>
+    `;
+    document.body.appendChild(template.content);
+  </script>
 </head>
 <body unresolved>
-  <script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
+  <div class="vertical-section-container centered">
     <h3>Paper-materials can have different elevations</h3>
     <demo-snippet class="centered-demo">
       <template>
@@ -72,14 +62,10 @@ $_documentContainer.innerHTML = `<div class="vertical-section-container centered
           #a1, #a2 { cursor: pointer; }
         </style>
         <div>
-          <paper-material elevation="0" animated="" id="a1">animated</paper-material>
-          <paper-material elevation="3" id="a2">not animated</paper-material>
+          <paper-material elevation="0" id="a1" animated onclick="_onTap(event)">animated</paper-material>
+          <paper-material elevation="3" id="a2" onclick="_onTap(event)">not animated</paper-material>
         </div>
         <script>
-          window.addEventListener('WebComponentsReady', function() {
-            a1.addEventListener('click', _onTap);
-            a2.addEventListener('click', _onTap);
-          });
           function _onTap(e) {
             var target = e.target;
             if (!target.down) {
@@ -94,10 +80,9 @@ $_documentContainer.innerHTML = `<div class="vertical-section-container centered
               }
             }
           };
-        &lt;/script>
+        </script>
       </template>
     </demo-snippet>
-  </div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
+  </div>
+</body>
+</html>
