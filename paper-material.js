@@ -28,10 +28,10 @@ Example:
       ... content ...
     </paper-material>
 
-@group Paper Elements
 @demo demo/index.html
 */
 Polymer({
+  /** @override */
   _template: html`
     <style include="paper-material-shared-styles"></style>
     <style>
@@ -53,8 +53,6 @@ Polymer({
      * The z-depth of this element, from 0-5. Setting to 0 will remove the
      * shadow, and each increasing number greater than 0 will be "deeper"
      * than the last.
-     *
-     * @attribute elevation
      * @type number
      * @default 1
      */
@@ -63,8 +61,6 @@ Polymer({
     /**
      * Set this to true to animate the shadow when setting a new
      * `elevation` value.
-     *
-     * @attribute animated
      * @type boolean
      * @default false
      */
